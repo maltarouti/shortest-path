@@ -166,8 +166,10 @@ if __name__ == "__main__":
     path, km, time, cost = app.Astar()
 
     print("===============================================")
-    print("The path from {} to {}:".format(A, B))
+    A, B = A.title(), B.title()
+    print("The shortest path from {} to {}:".format(A, B))
     for i, city in enumerate(path):
+        city = city.title()
         if i != len(path)-1:
             print("{} --->".format(city), end=" ")
         else:
@@ -175,5 +177,5 @@ if __name__ == "__main__":
 
     print("The total distance is {} KM".format(km))
     print("The total cost in Saudi Riyal is {} SAR".format(cost))
-    print("The estimated time to reach {} from {} is {} hours".format(A, B, time))
+    print("The estimated time to reach {} from {} is {} hours".format(B, A, time))
     print("===============================================")
